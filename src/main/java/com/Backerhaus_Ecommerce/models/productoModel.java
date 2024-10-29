@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "producto")
-public class producto {
+public class productoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +20,7 @@ public class producto {
 
     @ManyToOne
     @JoinColumn(name = "id_familia", referencedColumnName = "id_familia")
-    private familia fam;
+    private familiaModel fam;
 
 
     public int getId_producto() {
@@ -71,11 +71,11 @@ public class producto {
         this.cantidad_minima = cantidad_minima;
     }
 
-    public familia getFam() {
+    public familiaModel getFam() {
         return fam;
     }
 
-    public void setFam(familia fam) {
+    public void setFam(familiaModel fam) {
         this.fam = fam;
     }
 }

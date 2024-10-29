@@ -4,6 +4,6 @@ package com.Backerhaus_Ecommerce.models;
 import jakarta.persistence.Entity;
 
 @Entity
-public class carrito {
+public class carritoModel {
 
 }
