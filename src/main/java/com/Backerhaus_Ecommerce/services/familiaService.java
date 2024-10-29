@@ -18,4 +18,31 @@ public class familiaService {
     public ArrayList<familiaModel> getFamilia(){
         return (ArrayList<familiaModel>) familiaRepository.findAll();
     }
+
+    //Metodo que crea una nueva familia
+    public familiaModel saveFamilia(familiaModel familia){
+        return familiaRepository.save(familia);
+    }
+
+
+    //Metodo eliminar familia
+    public boolean deleteFamilia(Long id){
+        try{
+            familiaRepository.deleteById(id);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
+
+
+    //Metodo actualizar familia
+    public familiaModel updateFamiliaById(familiaModel request, Long id){
+        familiaModel familia = familiaRepository.findById(id).get();
+
+        familia.setNombre(request.getNombre());
+        familia.setDescripcion(request.getDescripcion());
+
+        return familia;
+    }
 }
