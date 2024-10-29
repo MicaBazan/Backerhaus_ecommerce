@@ -4,6 +4,7 @@ package com.Backerhaus_Ecommerce.models;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "producto")
 public class producto {
 
     @Id

@@ -1,12 +1,10 @@
 package com.Backerhaus_Ecommerce.models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "familia")
 public class familia {
 
     @Id
