@@ -15,6 +15,8 @@ public class productoModel {
     private String descripcion;
     private float precio;
     private String imagen;
+
+
     private int cantidad_minima;
 
 
