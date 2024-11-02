@@ -35,7 +35,7 @@ public class familiaController {
         }
     }
 
-    @GetMapping
+    @GetMapping(path = "/nombre")
     public List<familiaModel> getFamiliaByNombre(@RequestParam("nombre") String nombre){
         return familiaservice.getFamiliaByNombre(nombre);
     }

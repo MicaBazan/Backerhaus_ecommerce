@@ -9,6 +9,7 @@ import java.util.List;
 
 
 //Clase que permite tener query a una base de datos
+// Se encarga de interactuar con la base de datos.
 @Repository
 public interface IFamiliaRepository extends JpaRepository<familiaModel, Long> {
 
