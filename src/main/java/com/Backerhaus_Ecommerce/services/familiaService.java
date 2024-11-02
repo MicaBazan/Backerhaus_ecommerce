@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class familiaService {
@@ -44,5 +46,17 @@ public class familiaService {
         familia.setDescripcion(request.getDescripcion());
 
         return familia;
+    }
+
+
+    // Lista familia por ID
+    public Optional<familiaModel> getFamiliaById(Long id){
+        return familiaRepository.findById((id));
+    }
+
+
+    //Lista familia por nombre
+    public List<familiaModel> getFamiliaByNombre(String nombre) {
+        return familiaRepository.findByNombre(nombre);
     }
 }
