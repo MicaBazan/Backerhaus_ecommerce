@@ -7,6 +7,6 @@ import com.Backerhaus_Ecommerce.models.productoModel;
 
 
 @Repository
-public interface IProductoRepository extends JpaRepository<productoModel, Long> {
+public interface IProductoRepository extends JpaRepository<productoModel, Integer> {
 
 }

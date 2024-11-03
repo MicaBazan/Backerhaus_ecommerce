@@ -55,6 +55,7 @@ public class familiaService {
     }
 
 
+
     //Lista familia por nombre
     public List<familiaModel> getFamiliaByNombre(String nombre) {
         return familiaRepository.findByNombre(nombre);
