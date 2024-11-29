@@ -6,4 +6,7 @@ public class clienteModel {
     private String descripcion;
     private float precio;
     private String imagen;
+
+
+    
 }
