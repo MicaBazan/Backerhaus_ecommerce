@@ -1,15 +1,37 @@
 package com.Backerhaus_Ecommerce.models;
 
+import jakarta.persistence.*;
+import org.springframework.lang.NonNull;
+
+@Entity
+@Table(name="persona")
 public class personaModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String name;
+
+    @NonNull
     private String email;
     private String phone;
+
+    @NonNull
     private String password;
     private String status;
     private String nameBusiness;
     private String statusAccount;
-    private String rol;
+    private Role rol;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -67,11 +89,7 @@ public class personaModel {
         this.statusAccount = statusAccount;
     }
 
-    public String getRol() {
-        return rol;
-    }
-
-    public void setRol(String rol) {
-        this.rol = rol;
+    public enum Role{
+        USER, ADMIN
     }
 }
