@@ -1,7 +1,10 @@
 package com.Backerhaus_Ecommerce.models;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.processing.Pattern;
 import org.springframework.lang.NonNull;
+
+import java.util.*;
 
 @Entity
 @Table(name="persona")
@@ -13,17 +16,26 @@ public class personaModel {
 
     private String name;
 
-    @NonNull
+    @Column(unique = true, nullable = false)
     private String email;
     private String phone;
 
-    @NonNull
     private String password;
     private String status;
     private String nameBusiness;
     private String statusAccount;
-    private Role rol;
 
+    @ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "persona_rol",
+            joinColumns = @JoinColumn(name = "id_persona"),
+            inverseJoinColumns = @JoinColumn(name = "id_rol")
+    )
+    private Set<rolModel> roles = new HashSet<>();
+
+
+    @ManyToMany( cascade = {})
+    private List<addressModel> addresses = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -89,7 +101,4 @@ public class personaModel {
         this.statusAccount = statusAccount;
     }
 
-    public enum Role{
-        USER, ADMIN
-    }
 }
